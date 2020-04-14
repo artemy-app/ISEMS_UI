@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Button, Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
+import { Button, Container, Navbar, Nav, NavDropdown, Tooltip, OverlayTrigger } from "react-bootstrap";
 import PropTypes from "prop-types";
 
 import { ModalWindowChangeAdminPasswd } from "./commons/modalWindowChangeAdminPasswd.jsx";
@@ -87,7 +87,15 @@ class CreateHeaderMenu extends React.Component {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Nav className="mr-auto">{this.createMenu()}</Nav>
                     <Navbar.Collapse className="justify-content-end">
-                        <Navbar.Text>{this.listItems.userName}</Navbar.Text>&nbsp;&nbsp;
+                        <OverlayTrigger
+                            placement="bottom"
+                            overlay={<Tooltip>модуль сетевого взаимодействия</Tooltip>}>
+                            <img src="/images/network_red.png" width="30" height="30"/>
+                            {/*<img src="/images/network_green.png" width="30" height="30"/>*/}
+                        </OverlayTrigger>
+                        &nbsp;&nbsp;
+                        <Navbar.Text>{this.listItems.userName}</Navbar.Text>
+                        &nbsp;&nbsp;
                         <Button variant="outline-info" size="sm" href="logout">ВЫХОД</Button>
                     </Navbar.Collapse>
                 </Navbar>
