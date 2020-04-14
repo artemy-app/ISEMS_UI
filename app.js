@@ -107,6 +107,10 @@ async.parallel([
         debug("222222222");
         debug("333333333");
 
+        debug("444444444");
+        debug("555555555");
+        debug("666666666");
+
         callback(null);
     },
 
